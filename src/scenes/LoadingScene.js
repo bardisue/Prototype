@@ -17,6 +17,7 @@ import dogImg from "../assets/spritesheets/dog.png";
 import eyeballImg from "../assets/spritesheets/eyeball.png";
 import expUpImg from '../assets/spritesheets/exp-up.png';
 import explosionImg from '../assets/spritesheets/explosion.png';
+import objImg from '../assets/images/someObj.png';
 
 export default class LoadingScene extends Phaser.Scene {
     constructor() {
@@ -28,6 +29,7 @@ export default class LoadingScene extends Phaser.Scene {
         this.load.image("background", bgImg);
         this.load.image("cat", catImg);
         this.load.image("beam", beamImg);
+        this.load.image("some", objImg);
 
         this.load.spritesheet("bat", batImg, {
             frameWidth: 16,
@@ -64,6 +66,7 @@ export default class LoadingScene extends Phaser.Scene {
 
     create() {
         this.add.text(20, 20, "Loading game...");
+        this.scene.start("playGame");
         // this.scene.start("mainScene");
 
         this.anims.create({
